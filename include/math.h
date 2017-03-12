@@ -139,3 +139,43 @@ long double acoshl(long double x);
 float atanhf(float x);
 double atanh(double x);
 long double atanhl(long double x);
+
+float erff(float x);
+double erf(double x);
+long double erfl(long double x);
+
+float erfcf(float x);
+double erfc(double x);
+long double erfcl(long double x);
+
+float lgammaf(float x);
+double lgamma(double x);
+long double lgammal(long double x);
+
+float tgammaf(float x);
+double tgamma(double x);
+long double tgammal(long double x);
+
+float floorf(float x);
+double floor(double x);
+long double floorl(long double x);
+
+float ceilf(float x);
+double ceil(double x);
+long double ceill(long double x);
+
+float truncf(float x);
+double trunc(double x);
+long double truncl(long double x);
+
+float roundf(float x);
+double round(double x);
+long double roundl(long double x);
+
+long lroundf(float x);
+long lround(double x);
+long lroundl(long double x);
+
+long long llroundf(float x);
+long long llround(double x);
+long long llroundl(long double x);

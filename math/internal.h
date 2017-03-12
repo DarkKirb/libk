@@ -68,3 +68,24 @@ T __exp(T n, T x, int precision) {
     return __exp((T)E, x * __log((T)E, n, precision), precision);
 }
 
+template <typename T>
+T __fac(T x) {
+    T y=1;
+    for(T i=1; i <= x; i++) {
+        y*=i;
+    }
+    return y;
+}
+template <typename T>
+T __pow(T x, int y) {
+    T z=1.0;
+    for(int i=0;i<y;i++)
+        z*=x;
+    return z;
+}
+
+template <typename T>
+T __sinh(T x, int precision) {
+    return (__exp((T)E, x, precision) - __exp((T)E, -x, precision))/2;
+}
+

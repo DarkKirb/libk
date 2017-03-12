@@ -2,21 +2,6 @@
 #include "internal.h"
 
 template <typename T>
-T __fac(T x) {
-    T y=1;
-    for(T i=1; i <= x; i++) {
-        y*=i;
-    }
-    return y;
-}
-template <typename T>
-T __pow(T x, int y) {
-    T z=1.0;
-    for(int i=0;i<y;i++)
-        z*=x;
-    return z;
-}
-template <typename T>
 T __sin(T x) {
     //Taylor series expansion
     //First, get x into the range [0, PI]
@@ -115,10 +100,6 @@ T __arctan(T x) {
     }
 }
 
-template <typename T>
-T __sinh(T x, int precision) {
-    return (__exp((T)E, x, precision) - __exp((T)E, -x, precision))/2;
-}
 template <typename T>
 T __cosh(T x, int precision) {
     return (__exp((T)E, x, precision) + __exp((T)E, -x, precision))/2;
