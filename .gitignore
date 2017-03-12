@@ -1,1 +1,3 @@
 locale/unicode.h
+*.o
+a.out
