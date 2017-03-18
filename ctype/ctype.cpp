@@ -12,9 +12,9 @@ unicodeChar* getEntry(int codepoint) {
 int iswalpha(int c) {
     auto cp = getEntry(c);
     if(!cp)
-        return false
+        return false;
     CC cat=cp->category;
-    return iswlower(c) || iswalpha(c) || (cat == CC::LETTER_NUMBER) || (cat == CC::LETTER_MODIFIER) || (cat == CC:LETTER_OTHER);
+    return iswlower(c) || iswalpha(c) || (cat == CC::LETTER_NUMBER) || (cat == CC::LETTER_MODIFIER) || (cat == CC::LETTER_OTHER);
 }
 
 int iswlower(int c) {
@@ -62,7 +62,7 @@ int iswprint(int c) {
     if(!cp)
         return false;
     CC cat=cp->category;
-    return iswalpha(c) || iswdigit(c) || (cat == CC::SPACING_COMBINING_MARK) || (cat == CC::SPACE) || (cat == CC::NON_SPACING_MARK) || (cat == CC::ENCLOSING_MARK) || (cat == CC:PRIVATE_USE) || ispunct(c);
+    return iswalpha(c) || iswdigit(c) || (cat == CC::SPACING_COMBINING_MARK) || (cat == CC::SPACE) || (cat == CC::NON_SPACING_MARK) || (cat == CC::ENCLOSING_MARK) || (cat == CC::PRIVATE_USE) || ispunct(c);
 }
 
 int iswpunct(int c) {
@@ -70,7 +70,7 @@ int iswpunct(int c) {
     if(!cp)
         return false;
     CC cat=cp->category;
-    return (cat == CC::PUNCTUATION_CONNECTOR) || (cat == CC::PUNCTUATION_DASH) || (cat == CC::PUNCTUATION_OPEN) || (cat == CC::PUNCTUATION_CLOSE) || (cat == CC::PUNCTUATION_INITIAL) || (cat == CC::PUNCTUATION_FINAL) || (cat == CC::PUNCTUATION_OTHER) || (cat == CC::SYMBOL_MATH) || (cat == CC::SYMBOL_CURRENCY) || (cat == CC::SYMBOL_MODIFIER) || cat == CC::SYMBOL_OTHER);
+    return (cat == CC::PUNCTUATION_CONNECTOR) || (cat == CC::PUNCTUATION_DASH) || (cat == CC::PUNCTUATION_OPEN) || (cat == CC::PUNCTUATION_CLOSE) || (cat == CC::PUNCTUATION_INITIAL) || (cat == CC::PUNCTUATION_FINAL) || (cat == CC::PUNCTUATION_OTHER) || (cat == CC::SYMBOL_MATH) || (cat == CC::SYMBOL_CURRENCY) || (cat == CC::SYMBOL_MODIFIER) || (cat == CC::SYMBOL_OTHER);
 }
 
 int towlower(int c) {
@@ -88,3 +88,4 @@ int towupper(int c) {
     if(cp->uppercase)
         return cp->uppercase;
     return c;
+}
