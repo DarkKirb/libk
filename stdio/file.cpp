@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <base.hpp>
 FILE *fopen(const char* filename, const char *mode) {
     return NULL;
 }
