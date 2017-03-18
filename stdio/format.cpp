@@ -263,7 +263,7 @@ int vsprintf(char* buffer, const char* format, va_list ap) {
 }
 int sprintf(char* buffer, const char* format, ...) {
     va_list ap;
-    va_start(ap, format9;
+    va_start(ap, format);
     int v = vsprintf(buffer, format, ap);
     va_end(format);
     return v;
@@ -296,7 +296,8 @@ int vsnprintf(char* buffer, int bufsz, const char * format, va_list ap) {
     return written+mw;
 }
 int snprintf(char* buffer, int bufsz, const char * format, ...) {
-    va_list ap = va_begin(format);
+    va_list ap;
+    va_start(ap, format);
     int v = vsnprintf(buffer, bufsz, format, ap);
     va_end(ap);
     return v;
