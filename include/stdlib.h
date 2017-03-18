@@ -1,9 +1,5 @@
 #pragma once
-#ifndef __arm__
-typedef unsigned long size_t;
-#else
-typedef unsigned int size_t;
-#endif
+#include <stdint.h>
 #define wchar_t int
 #define NULL nullptr
 #define EXIT_FAILURE -1
