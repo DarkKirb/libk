@@ -15,14 +15,14 @@ void *bsearch(const void* key, const void* base, size_t nitems, size_t size, int
     }
     if(comp)
         return NULL;
-    return base + i * size;
+    return (void*)(base + i * size);
 }
-void partition(void *base, size_t size, int (*compar)(const void*, const void*), int lo, int hi) {
+int partition(void *base, size_t size, int (*compar)(const void*, const void*), int lo, int hi) {
     void *pivot = malloc(size);
     memcpy(pivot, base + hi * size, size);
     int i = lo-1;
     for(int j = lo; j < hi; j++) {
-        if(compar(base + j * size, pivot) <= pivot) {
+        if(compar(base + j * size, pivot) <= 0) {
             i++;
             void *temp = malloc(size);
             memcpy(temp, base + i * size, size);
@@ -42,8 +42,8 @@ void partition(void *base, size_t size, int (*compar)(const void*, const void*),
 void qs(void * base, size_t size, int (*compar)(const void*, const void*), int lo, int hi) {
     if(lo < hi) {
         int p = partition(base, size, compar, lo, hi);
-        quicksort(base, size, compar, lo, p-1);
-        quicksort(base, size, compar, p+1, hi);
+        qs(base, size, compar, lo, p-1);
+        qs(base, size, compar, p+1, hi);
     }
 }
 void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void*, const void*)) {
