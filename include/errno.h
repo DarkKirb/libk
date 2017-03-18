@@ -8,7 +8,7 @@
 #define EDOM_TEXT "Parameter outside of function's domain"
 #define ERANGE_TEXT "Result outside of function's range"
 #define EILSEQ_TEXT "Illegal UTF-8 byte sequence"
-#define EIO "I/O Error"
+#define EIO_TEXT "I/O Error"
 
 extern int errno_code;
 #define errno() (errno_code)
