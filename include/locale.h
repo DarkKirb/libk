@@ -25,7 +25,7 @@ struct lconv {
     char n_cs_precedes;
     char n_sep_by_space;
     char p_sign_posn;
-    char p_sign_posn;
+    char n_sign_posn;
 };
 
 lconv *localeconv(void);
