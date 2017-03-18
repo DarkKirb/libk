@@ -13,7 +13,7 @@ char *strncat(char *dest, const char* src, size_t n) {
     int start=0;
     int i=0;
     while(dest[start++]);
-    while((src[i]) && (src < n)) {
+    while((src[i]) && (i < n)) {
         dest[start+i]=src[i++];
     }
     if(i!=n)
@@ -21,7 +21,7 @@ char *strncat(char *dest, const char* src, size_t n) {
     return dest;
 }
 char *strchr(const char *str, int c) {
-    return memchr(str, c, strlen(str));
+    return (char*)memchr(str, c, strlen(str));
 }
 int strcmp(const char *s1, const char *s2) {
     size_t len1 = strlen(s1), len2=strlen(s2);
@@ -37,10 +37,10 @@ int strncmp(const char *s1, const char *s2, size_t len) {
     return memcmp(s1, s2, MIN(len, len2));
 }
 char *strcpy(char *dest, const char *src) {
-    return memmove(dest, src, strlen(src));
+    return (char*)memmove(dest, src, strlen(src));
 }
 char *strncpy(char *dest, const char *src, size_t n) {
-    return memmove(dest, src, MIN(strlen(src),n));
+    return (char*)memmove(dest, src, MIN(strlen(src),n));
 }
 size_t strcspn(const char *str1, const char* str2) {
     size_t length=0;
@@ -60,7 +60,7 @@ size_t strlen(const char *str) {
 }
 char *strpbrk(const char *str1, const char *str2) {
     for(int i=0; str1[i]; i++) {
-        for(int j=0; str[j]; j++) {
+        for(int j=0; str2[j]; j++) {
             if(str1[i] == str2[j])
                 return str1+i;
         }
@@ -70,7 +70,7 @@ char *strpbrk(const char *str1, const char *str2) {
 size_t strspn(const char *str1, const char *str2) {
     size_t len=0;
     for(int i=0; str1[i]; i++) {
-        for(int j=0; str[j]; j++) {
+        for(int j=0; str2[j]; j++) {
             if(str1[i] != str2[j])
                 return len;
         }
