@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
 FILE *fopen(const char* filename, const char *mode) {
     return NULL;
 }
