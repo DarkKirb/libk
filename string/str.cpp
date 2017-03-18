@@ -62,7 +62,7 @@ char *strpbrk(const char *str1, const char *str2) {
     for(int i=0; str1[i]; i++) {
         for(int j=0; str2[j]; j++) {
             if(str1[i] == str2[j])
-                return str1+i;
+                return (char*)(str1+i);
         }
     }
     return NULL;
