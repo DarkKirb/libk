@@ -20,8 +20,8 @@ char* intToChar(T i, int base) {
     strncpy(nbuf, ptr, strlen(ptr)+1);
     return nbuf;
 }
-template <typename T>
-int puti(int(*put)(int), int(*sput)(const char*), T i, bool alwaysSign, bool noSignSpace, int base) {
+template <typename T, typename T1, typename T2>
+int puti(T1 put, T2 sput, T i, bool alwaysSign, bool noSignSpace, int base) {
     int written=0;
     char *b = intToChar(i, base);
     if(i < 0) {
@@ -144,7 +144,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(0, unsigned int, 8);
                     puti_case(1, unsigned long, 8);
                     puti_case(2, unsigned long long, 8);
-                    puti_case(3, unsigned intmax_t, 8);
+                    puti_case(3, uintmax_t, 8);
                     puti_case(4, size_t, 8);
                     puti_case(5, unsigned ptrdiff_t, 8);
                 }
@@ -165,7 +165,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     hexa_case(0, unsigned int);
                     hexa_case(1, unsigned long);
                     hexa_case(2, unsigned long long);
-                    hexa_case(3, unsigned intmax_t);
+                    hexa_case(3, uintmax_t);
                     hexa_case(4, size_t);
                     hexa_case(5, unsigned ptrdiff_t);
                 }
@@ -177,7 +177,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(0, unsigned int, 10);
                     puti_case(1, unsigned long, 10);
                     puti_case(2, unsigned long long, 10);
-                    puti_case(3, unsigned intmax_t, 10);
+                    puti_case(3, uintmax_t, 10);
                     puti_case(4, size_t, 10);
                     puti_case(5, unsigned ptrdiff_t, 10);
                 }
@@ -224,7 +224,7 @@ int printf(const char* format, ...) {
     va_start(ap, format);
     int w = vprintf(format,ap);
     va_end(ap);
-    return v;
+    return w;
 }
 int vfprintf(FILE *stream, const char* format, va_list ap) {
     int written = put([stream](int x) -> int { 
@@ -254,7 +254,7 @@ int vsprintf(char* buffer, const char* format, va_list ap) {
             [&buffer](const char * s) -> int {
                 int i=0;
                 while(s[i]) {
-                    *(buffer++) = s[i++]
+                    *(buffer++) = s[i++];
                 }
                 return i-1;
             }, format, ap);
@@ -265,13 +265,13 @@ int sprintf(char* buffer, const char* format, ...) {
     va_list ap;
     va_start(ap, format);
     int v = vsprintf(buffer, format, ap);
-    va_end(format);
+    va_end(ap);
     return v;
 }
 int vsnprintf(char* buffer, int bufsz, const char * format, va_list ap) {
     char* endbuf=buffer+bufsz;
     int mw=0;
-    int written = put([&buffer, endbuf](int x) -> int {
+    int written = put([&mw, &buffer, endbuf](int x) -> int {
                 if(buffer == endbuf) {
                     mw--;
                     return 0;
@@ -282,7 +282,7 @@ int vsnprintf(char* buffer, int bufsz, const char * format, va_list ap) {
             [&buffer, endbuf](const char* s) -> int {
                 int i=0;
                 while(s[i]) {
-                    if(buf == endbuf) {
+                    if(buffer == endbuf) {
                         i++;
                         break;
                     }
