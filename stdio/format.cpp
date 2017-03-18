@@ -2,9 +2,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
 template <typename T>
 char* intToChar(T i, int base) {
-    unsigned T x=(unsigned T)i;
+    T x=(T)i;
     char buf[sizeof(T)*8+1];
     buf[sizeof(T)*8]=0;
     char* ptr=buf+sizeof(T)*8-1;
@@ -14,7 +16,7 @@ char* intToChar(T i, int base) {
         x/=base;
         ptr--;
     } while((x) && (ptr!=buf));
-    char* nbuf=malloc(strlen(ptr)+1);
+    char* nbuf=(char*)malloc(strlen(ptr)+1);
     strncpy(nbuf, ptr, strlen(ptr)+1);
     return nbuf;
 }
@@ -131,7 +133,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(1, long,10);
                     puti_case(2, long long,10);
                     puti_case(3, intmax_t,10);
-                    puti_case(4, signed size_t,10);
+                    puti_case(4, long,10);
                     puti_case(5, ptrdiff_t,10);
                 }
                 break;
@@ -177,25 +179,25 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(2, unsigned long long, 10);
                     puti_case(3, unsigned intmax_t, 10);
                     puti_case(4, size_t, 10);
-                    putI_case(5, unsigned ptrdiff_t, 10);
+                    puti_case(5, unsigned ptrdiff_t, 10);
                 }
                 break;
             case 'n':
 #define writen_case(i, t) \
             case i: { \
-                        t p = va_arg(ap, t);\
+                        t *p = va_arg(ap, t*);\
                         *p=(t)written; \
                         break; \
                     }
                 switch(width) {
-                    writen_case(-2, char*);
-                    writen_case(-1, short*);
-                    writen_case(0, int*);
-                    writen_case(1, long*);
-                    writen_case(2, long long*);
-                    writen_case(3, intmax_t*);
-                    writen_case(4, signed size_t*);
-                    writen_case(5, ptrdiff_t*);
+                    writen_case(-2, char);
+                    writen_case(-1, short);
+                    writen_case(0, int);
+                    writen_case(1, long);
+                    writen_case(2, long long);
+                    writen_case(3, intmax_t);
+                    writen_case(4, long);
+                    writen_case(5, ptrdiff_t);
                 }
                 break;
             default:
@@ -218,7 +220,8 @@ int vprintf(const char* format, va_list ap) {
     return written;
 }
 int printf(const char* format, ...) {
-    va_list ap=va_start(format);
+    va_list ap;
+    va_start(ap, format);
     int w = vprintf(format,ap);
     va_end(ap);
     return v;
@@ -236,7 +239,8 @@ int vfprintf(FILE *stream, const char* format, va_list ap) {
     return written;
 }
 int fprintf(FILE *stream, const char* format, ...) {
-    va_list ap=va_start(format);
+    va_list ap;
+    va_start(ap, format);
     int v = vfprintf(stream, format, ap);
     va_end(ap);
     return v;
@@ -258,7 +262,8 @@ int vsprintf(char* buffer, const char* format, va_list ap) {
     return written;
 }
 int sprintf(char* buffer, const char* format, ...) {
-    va_list ap = va_start(format);
+    va_list ap;
+    va_start(ap, format9;
     int v = vsprintf(buffer, format, ap);
     va_end(format);
     return v;
