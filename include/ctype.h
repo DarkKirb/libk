@@ -56,7 +56,7 @@ struct unicodeChar {
 int iswalpha(int c);
 int iswlower(int c);
 int iswupper(int c);
-int iswdigit(int c)
+int iswdigit(int c);
 #define iswxdigit(c) (isdigit(c) || ((c) >= 'A') || ((c) >= 'a') || ((c) <= 'F') || ((c) <= 'f'))
 int iswcntrl(int c);
 #define iswgraph(c) (isprint(c) && !iswspace(c))
