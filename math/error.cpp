@@ -51,10 +51,10 @@ deferr(erfcf, float, __errc);
 deferr(erfc, double, __errc);
 deferr(erfcl, long double, __errc);
 
-defgamma(lgammaf, float, __lgamma);
-defgamma(lgamma, double, __lgamma);
-defgamma(lgammal, long double, __lgamma);
+defgamma(lgammaf, float, __lgamma, SP);
+defgamma(lgamma, double, __lgamma, DP);
+defgamma(lgammal, long double, __lgamma, LDP);
 
-defgamma(tgammaf, float, __gamma);
-defgamma(tgamma, double, __gamma);
-defgamme(tgammal, long double, __gamma);
+defgamma(tgammaf, float, __gamma, SP);
+defgamma(tgamma, double, __gamma, DP);
+defgamma(tgammal, long double, __gamma, LDP);
