@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 //ChaCha20 pRNG
 uint32_t seed[] = {
     0x629102ea,
