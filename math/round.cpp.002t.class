@@ -1,0 +1,20 @@
+Class div_t
+   size=8 align=4
+   base size=8 base align=4
+div_t (0x0x7fc253bdaae0) 0
+
+Class ldiv_t
+   size=8 align=4
+   base size=8 base align=4
+ldiv_t (0x0x7fc253bdab40) 0
+
+Class lldiv_t
+   size=16 align=8
+   base size=16 base align=8
+lldiv_t (0x0x7fc253bdaba0) 0
+
+Class imaxdiv_t
+   size=16 align=8
+   base size=16 base align=8
+imaxdiv_t (0x0x7fc253bdac00) 0
+

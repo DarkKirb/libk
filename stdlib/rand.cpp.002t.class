@@ -1,0 +1,10 @@
+Class chacha20()::<lambda(uint32_t, uint32_t)>
+   size=1 align=1
+   base size=0 base align=1
+chacha20()::<lambda(uint32_t, uint32_t)> (0x0x7f76205c7c00) 0 empty
+
+Class chacha20()::<lambda(int, int, int, int)>
+   size=8 align=4
+   base size=5 base align=4
+chacha20()::<lambda(int, int, int, int)> (0x0x7f76205c7d80) 0
+

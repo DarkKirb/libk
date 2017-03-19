@@ -1,0 +1,228 @@
+Class multiboot_header
+   size=48 align=4
+   base size=48 base align=4
+multiboot_header (0x0x7f65752eeae0) 0
+
+Class multiboot_aout_symbol_table
+   size=16 align=4
+   base size=16 base align=4
+multiboot_aout_symbol_table (0x0x7f65752eeb40) 0
+
+Class multiboot_elf_section_header_table
+   size=16 align=4
+   base size=16 base align=4
+multiboot_elf_section_header_table (0x0x7f65752eeba0) 0
+
+Class multiboot_info::<anonymous union>
+   size=16 align=4
+   base size=16 base align=4
+multiboot_info::<anonymous union> (0x0x7f65752eec60) 0
+
+Class multiboot_info::<anonymous union>::<anonymous struct>
+   size=8 align=4
+   base size=8 base align=4
+multiboot_info::<anonymous union>::<anonymous struct> (0x0x7f65752eed20) 0
+
+Class multiboot_info::<anonymous union>::<anonymous struct>
+   size=6 align=1
+   base size=6 base align=1
+multiboot_info::<anonymous union>::<anonymous struct> (0x0x7f65752eed80) 0
+
+Class multiboot_info::<anonymous union>
+   size=8 align=4
+   base size=8 base align=4
+multiboot_info::<anonymous union> (0x0x7f65752eecc0) 0
+
+Class multiboot_info
+   size=120 align=8
+   base size=120 base align=8
+multiboot_info (0x0x7f65752eec00) 0
+
+Class multiboot_color
+   size=3 align=1
+   base size=3 base align=1
+multiboot_color (0x0x7f65752eede0) 0
+
+Class multiboot_mmap_entry
+   size=24 align=1
+   base size=24 base align=1
+multiboot_mmap_entry (0x0x7f65752eee40) 0
+
+Class multiboot_mod_list
+   size=16 align=4
+   base size=16 base align=4
+multiboot_mod_list (0x0x7f65752eeea0) 0
+
+Class multiboot_apm_info
+   size=20 align=4
+   base size=20 base align=4
+multiboot_apm_info (0x0x7f65752eef00) 0
+
+Vtable for MTGos::Serial
+MTGos::Serial::_ZTVN5MTGos6SerialE: 6u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     0u
+12    0u
+16    (int (*)(...))__cxa_pure_virtual
+20    (int (*)(...))MTGos::Serial::puts
+
+Class MTGos::Serial
+   size=16 align=4
+   base size=16 base align=4
+MTGos::Serial (0x0x7f6575326000) 0
+    vptr=((& MTGos::Serial::_ZTVN5MTGos6SerialE) + 8u)
+
+Vtable for drivers::serial::NullSerial
+drivers::serial::NullSerial::_ZTVN7drivers6serial10NullSerialE: 6u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::serial::NullSerial::~NullSerial
+12    (int (*)(...))drivers::serial::NullSerial::~NullSerial
+16    (int (*)(...))drivers::serial::NullSerial::putChar
+20    (int (*)(...))MTGos::Serial::puts
+
+Class drivers::serial::NullSerial
+   size=16 align=4
+   base size=16 base align=4
+drivers::serial::NullSerial (0x0x7f657546f208) 0
+    vptr=((& drivers::serial::NullSerial::_ZTVN7drivers6serial10NullSerialE) + 8u)
+  MTGos::Serial (0x0x7f65753260c0) 0
+      primary-for drivers::serial::NullSerial (0x0x7f657546f208)
+
+Vtable for MTGos::Display
+MTGos::Display::_ZTVN5MTGos7DisplayE: 8u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     0u
+12    0u
+16    (int (*)(...))MTGos::Display::puts
+20    (int (*)(...))__cxa_pure_virtual
+24    (int (*)(...))__cxa_pure_virtual
+28    (int (*)(...))__cxa_pure_virtual
+
+Class MTGos::Display
+   size=3016 align=4
+   base size=3016 base align=4
+MTGos::Display (0x0x7f6575326120) 0
+    vptr=((& MTGos::Display::_ZTVN5MTGos7DisplayE) + 8u)
+
+Vtable for drivers::display::NullDisplay
+drivers::display::NullDisplay::_ZTVN7drivers7display11NullDisplayE: 8u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::display::NullDisplay::~NullDisplay
+12    (int (*)(...))drivers::display::NullDisplay::~NullDisplay
+16    (int (*)(...))MTGos::Display::puts
+20    (int (*)(...))drivers::display::NullDisplay::plot
+24    (int (*)(...))drivers::display::NullDisplay::getPixel
+28    (int (*)(...))drivers::display::NullDisplay::destAddr
+
+Class drivers::display::NullDisplay
+   size=3016 align=4
+   base size=3016 base align=4
+drivers::display::NullDisplay (0x0x7f657546f270) 0
+    vptr=((& drivers::display::NullDisplay::_ZTVN7drivers7display11NullDisplayE) + 8u)
+  MTGos::Display (0x0x7f65753261e0) 0
+      primary-for drivers::display::NullDisplay (0x0x7f657546f270)
+
+Vtable for drivers::display::LFB
+drivers::display::LFB::_ZTVN7drivers7display3LFBE: 8u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::display::LFB::~LFB
+12    (int (*)(...))drivers::display::LFB::~LFB
+16    (int (*)(...))MTGos::Display::puts
+20    (int (*)(...))drivers::display::LFB::plot
+24    (int (*)(...))drivers::display::LFB::getPixel
+28    (int (*)(...))drivers::display::LFB::destAddr
+
+Class drivers::display::LFB
+   size=3016 align=4
+   base size=3016 base align=4
+drivers::display::LFB (0x0x7f657546f2d8) 0
+    vptr=((& drivers::display::LFB::_ZTVN7drivers7display3LFBE) + 8u)
+  MTGos::Display (0x0x7f6575326240) 0
+      primary-for drivers::display::LFB (0x0x7f657546f2d8)
+
+Vtable for drivers::serial::DisplaySerial
+drivers::serial::DisplaySerial::_ZTVN7drivers6serial13DisplaySerialE: 6u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::serial::DisplaySerial::~DisplaySerial
+12    (int (*)(...))drivers::serial::DisplaySerial::~DisplaySerial
+16    (int (*)(...))drivers::serial::DisplaySerial::putChar
+20    (int (*)(...))MTGos::Serial::puts
+
+Class drivers::serial::DisplaySerial
+   size=16 align=4
+   base size=16 base align=4
+drivers::serial::DisplaySerial (0x0x7f657546f340) 0
+    vptr=((& drivers::serial::DisplaySerial::_ZTVN7drivers6serial13DisplaySerialE) + 8u)
+  MTGos::Serial (0x0x7f65753262a0) 0
+      primary-for drivers::serial::DisplaySerial (0x0x7f657546f340)
+
+Vtable for MTGos::PMM
+MTGos::PMM::_ZTVN5MTGos3PMME: 8u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     0u
+12    0u
+16    (int (*)(...))__cxa_pure_virtual
+20    (int (*)(...))__cxa_pure_virtual
+24    (int (*)(...))__cxa_pure_virtual
+28    (int (*)(...))__cxa_pure_virtual
+
+Class MTGos::PMM
+   size=8 align=4
+   base size=8 base align=4
+MTGos::PMM (0x0x7f6575326300) 0
+    vptr=((& MTGos::PMM::_ZTVN5MTGos3PMME) + 8u)
+
+Class drivers::mm::PMMList
+   size=8 align=4
+   base size=8 base align=4
+drivers::mm::PMMList (0x0x7f65753266c0) 0
+
+Vtable for drivers::mm::PMMStack
+drivers::mm::PMMStack::_ZTVN7drivers2mm8PMMStackE: 10u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::mm::PMMStack::~PMMStack
+12    (int (*)(...))drivers::mm::PMMStack::~PMMStack
+16    (int (*)(...))drivers::mm::PMMStack::alloc
+20    (int (*)(...))drivers::mm::PMMStack::free
+24    (int (*)(...))drivers::mm::PMMStack::isFree
+28    (int (*)(...))drivers::mm::PMMStack::markUsed
+32    (int (*)(...))drivers::mm::PMMStack::push
+36    (int (*)(...))drivers::mm::PMMStack::pop
+
+Class drivers::mm::PMMStack
+   size=16 align=4
+   base size=16 base align=4
+drivers::mm::PMMStack (0x0x7f657546f3a8) 0
+    vptr=((& drivers::mm::PMMStack::_ZTVN7drivers2mm8PMMStackE) + 8u)
+  MTGos::PMM (0x0x7f6575326720) 0
+      primary-for drivers::mm::PMMStack (0x0x7f657546f3a8)
+
+Vtable for drivers::mm::PMMShareStack
+drivers::mm::PMMShareStack::_ZTVN7drivers2mm13PMMShareStackE: 10u entries
+0     (int (*)(...))0
+4     (int (*)(...))0
+8     (int (*)(...))drivers::mm::PMMShareStack::~PMMShareStack
+12    (int (*)(...))drivers::mm::PMMShareStack::~PMMShareStack
+16    (int (*)(...))drivers::mm::PMMShareStack::alloc
+20    (int (*)(...))drivers::mm::PMMShareStack::free
+24    (int (*)(...))drivers::mm::PMMShareStack::isFree
+28    (int (*)(...))drivers::mm::PMMShareStack::markUsed
+32    (int (*)(...))drivers::mm::PMMShareStack::push
+36    (int (*)(...))drivers::mm::PMMShareStack::pop
+
+Class drivers::mm::PMMShareStack
+   size=20 align=4
+   base size=20 base align=4
+drivers::mm::PMMShareStack (0x0x7f657546f410) 0
+    vptr=((& drivers::mm::PMMShareStack::_ZTVN7drivers2mm13PMMShareStackE) + 8u)
+  MTGos::PMM (0x0x7f6575326960) 0
+      primary-for drivers::mm::PMMShareStack (0x0x7f657546f410)
+

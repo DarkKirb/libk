@@ -1,0 +1,40 @@
+Class vprintf(const char*, va_list)::<lambda(int)>
+   size=1 align=1
+   base size=0 base align=1
+vprintf(const char*, va_list)::<lambda(int)> (0x0x7f5ddd306720) 0 empty
+
+Class vprintf(const char*, va_list)::<lambda(const char*)>
+   size=1 align=1
+   base size=0 base align=1
+vprintf(const char*, va_list)::<lambda(const char*)> (0x0x7f5ddd3068a0) 0 empty
+
+Class vfprintf(int*, const char*, va_list)::<lambda(int)>
+   size=4 align=4
+   base size=4 base align=4
+vfprintf(int*, const char*, va_list)::<lambda(int)> (0x0x7f5ddd306ae0) 0
+
+Class vfprintf(int*, const char*, va_list)::<lambda(const char*)>
+   size=4 align=4
+   base size=4 base align=4
+vfprintf(int*, const char*, va_list)::<lambda(const char*)> (0x0x7f5ddd306ba0) 0
+
+Class vsprintf(char*, const char*, va_list)::<lambda(int)>
+   size=4 align=4
+   base size=4 base align=4
+vsprintf(char*, const char*, va_list)::<lambda(int)> (0x0x7f5ddd306d80) 0
+
+Class vsprintf(char*, const char*, va_list)::<lambda(const char*)>
+   size=4 align=4
+   base size=4 base align=4
+vsprintf(char*, const char*, va_list)::<lambda(const char*)> (0x0x7f5ddd306e40) 0
+
+Class vsnprintf(char*, int, const char*, va_list)::<lambda(int)>
+   size=12 align=4
+   base size=12 base align=4
+vsnprintf(char*, int, const char*, va_list)::<lambda(int)> (0x0x7f5ddd32d060) 0
+
+Class vsnprintf(char*, int, const char*, va_list)::<lambda(const char*)>
+   size=8 align=4
+   base size=8 base align=4
+vsnprintf(char*, int, const char*, va_list)::<lambda(const char*)> (0x0x7f5ddd32d120) 0
+

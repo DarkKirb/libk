@@ -3,6 +3,10 @@
 #include <stdarg.h>
 #define FILE int
 #define EOF 0
+#define SEEK_SET 0
+#define SEEK_END 1
+#define SEEK_CUR 2
+#define NULL 0
 FILE *fopen(const char* filename, const char *mode);
 int fopen_s(FILE ** streamptr, const char *filename, const char *mode);
 

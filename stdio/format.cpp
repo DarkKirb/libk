@@ -146,7 +146,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(2, unsigned long long, 8);
                     puti_case(3, uintmax_t, 8);
                     puti_case(4, size_t, 8);
-                    puti_case(5, unsigned ptrdiff_t, 8);
+                    puti_case(5, unsigned long, 8);
                 }
                 break;
             case 'x':
@@ -167,7 +167,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     hexa_case(2, unsigned long long);
                     hexa_case(3, uintmax_t);
                     hexa_case(4, size_t);
-                    hexa_case(5, unsigned ptrdiff_t);
+                    hexa_case(5, unsigned long);
                 }
                 break;
             case 'u':
@@ -179,7 +179,7 @@ int put(T1 put, T2 sput, const char* format, va_list ap) {
                     puti_case(2, unsigned long long, 10);
                     puti_case(3, uintmax_t, 10);
                     puti_case(4, size_t, 10);
-                    puti_case(5, unsigned ptrdiff_t, 10);
+                    puti_case(5, unsigned long, 10);
                 }
                 break;
             case 'n':
